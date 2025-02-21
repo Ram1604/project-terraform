@@ -18,7 +18,6 @@ steps:
     args:
       - apply
       - '-input=false'
-      - 'out=tfplan'
       - '-auto-approve'
       - 'tfplan'
 options:
