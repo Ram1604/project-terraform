@@ -1,0 +1,17 @@
+steps:
+
+  - id: 'tf init'
+    name: 'hashicorp/terraform:1.7.5'
+    args:
+      - 'init'
+
+  - id: 'tf plan'
+    name: 'hashicorp/terraform:1.7.5'
+    args:
+      - 'plan'
+
+  - id: 'tf apply'
+    name: 'hashicorp/terraform:1.7.5'
+    args:
+      - 'apply'
+      - '-auto-approve'
