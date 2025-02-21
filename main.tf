@@ -58,3 +58,14 @@ resource "google_pubsub_subscription" "sub5" {
     ttl = ""
   }
 }
+
+resource "google_pubsub_subscription" "sub6" {
+  name = "test-6-sub"
+  project = var.project_id
+  topic = google_pubsub_topic.topic1.name
+  ack_deadline_seconds = 10
+  message_retention_duration = "86400s"
+  expiration_policy {
+    ttl = ""
+  }
+}
