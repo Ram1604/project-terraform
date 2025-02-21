@@ -1,17 +1,22 @@
 steps:
-
-  - id: 'tf init'
-    name: 'hashicorp/terraform:1.7.5'
+  # Terraform Init
+  - name: hashicorp/terraform:1.7.5
     args:
-      - 'init'
+      - init
+      - '-input=false'
 
-  - id: 'tf plan'
-    name: 'hashicorp/terraform:1.7.5'
+  # Terraform Plan
+  - name: hashicorp/terraform:1.7.5
     args:
-      - 'plan'
+      - plan
+      - '-input=false'
+      - '-out=tfplan'
+      - '-var-file=terraform.tfvars'
 
-  - id: 'tf apply'
-    name: 'hashicorp/terraform:1.7.5'
+  # Terraform Apply (Automatic)
+  - name: hashicorp/terraform:1.7.5
     args:
-      - 'apply'
+      - apply
+      - '-input=false'
       - '-auto-approve'
+      - 'tfplan'
