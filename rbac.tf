@@ -8,6 +8,9 @@ resource "google_project_iam_member" "bucket_access_tag" {
     condition {
         title = "bucket_condition"
         description = "Condition to allow access to the bucket"
-        expression = "resource.matchTag('project-terraform-11/ssot_datalayer', 'core')"
+        expression = <<-EOF
+        
+        (resource.matchTag("project-terraform-11/ssot_datalayer", "core"))
+        EOF
     }
 }
