@@ -14,4 +14,5 @@ resource "google_tags_location_tag_binding" "bucket_tag" {
 #   name = "test-bucket12-xvs-12"
 #   project = var.project_id
 #   location = "us-central1"
+#   force-destroy = true
 # }
