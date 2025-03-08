@@ -3,3 +3,8 @@ resource "google_storage_bucket" "bucket_1" {
   project = var.project_id
   location = "us-central1"
 }
+
+resource "google_tags_tag_binding" "bucket_tag" {
+  parent    = google_storage_bucket.bucket_1.id
+  tag_value = "tagValues/281481500673264"
+}
