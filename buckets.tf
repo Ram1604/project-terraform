@@ -10,8 +10,8 @@ resource "google_tags_location_tag_binding" "bucket_tag" {
   location = "us-central1"
 }
 
-resource "google_storage_bucket" "bucket_2" {
-  name = "test-bucket12-xvs-12"
-  project = var.project_id
-  location = "us-central1"
-}
+# resource "google_storage_bucket" "bucket_2" {
+#   name = "test-bucket12-xvs-12"
+#   project = var.project_id
+#   location = "us-central1"
+# }
