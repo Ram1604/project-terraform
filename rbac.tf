@@ -5,4 +5,9 @@ resource "google_project_iam_member" "bucket_access_tag" {
         "roles/storage.admin",
     ])
     role = each.key 
+    condition {
+        title = "bucket_condition"
+        description = "Condition to allow access to the bucket"
+        expression = "resource.matchTag('project-terraform-11/ssot_datalayer', 'core')"
+    }
 }
